@@ -9,16 +9,29 @@
   <body>
     <!-- 1. HTML/CSS로 미리 디자인 -->
     <!-- 2. 필요할 떄 보여달라고 코드짬 -->
-    <div class="alert-box" id="test">알림창 Modal</div>
-    <button onClick="document.getElementById('test').style.display = 'block';">
-      버튼
-    </button>
-    <button onclick={alertClose()}>
-      닫기
-    </button>
+    <div class="alert-box" id="test">
+      알림창 Modal
+      <button onclick="alertClose('test', 'none')">닫기</button>
+    </div>
+    <div class="alert-box" id="test2">
+      <p id="test3">test</p>
+      <button onclick="alertClose('test2','none')">닫기</button>
+    </div>
+    <!-- <div class="alert-box" id="test3">비밀번호를 입력하세요</div> -->
+    <button onClick="alertOpen('block');">버튼</button>
+
+    <button onclick="button('아이디를 입력하세요','block')">버튼1</button>
+    <button onclick="button('비밀번호를 입력하세요','block')">버튼2</button>
     <script>
-      function alertClose() {
-        document.getElementById('test').style.display = 'none';
+      function alertOpen(block) {
+        document.getElementById("test").style.display = block;
+      }
+      function alertClose(id, none) {
+        document.getElementById(id).style.display = none;
+      }
+      function button(context, state) {
+        document.getElementById("test3").innerHTML = context;
+        document.getElementById("test2").style.display = state;
       }
     </script>
   </body>
