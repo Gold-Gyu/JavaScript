@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn">button</button>
+    <script>
+      const person = {
+        name: "손흥민",
+        sayHi: function() {
+          console.log("안녕!! 나는 " + this.name);
+          console.log(this.name);
+        },
+      };
+      person.sayHi()
+
+      const structure = {
+        data: [1,2,3,4,5],
+        sumAll: function() {
+          let cnt = 0
+          this.data.forEach(function(e){
+            cnt = cnt + e;
+          });
+          console.log(cnt);
+        }
+      }
+
+      structure.sumAll()
+
+      document.getElementById('btn').addEventListener('click', function(){
+        // console.log(this);
+        setTimeout(()=>{console.log(this.innerHTML);},1000)
+      })
+
+    </script>
+  </body>
+</html>

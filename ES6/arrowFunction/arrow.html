@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn">button</button>
+  <script>
+    // 함수 만드는 법 : 함수는 그냥 쓰는 문법이 아니다.
+    // 1. 코드들을 기능으로 묶고 싶을 때 사용
+    // 2. 입출력 기계를 만들고 싶을 때 사용
+
+
+    // 첫 번째. arrow function
+    // 장점
+    // 1. 입출력 기계 만들 때 보기 쉬움
+    // 2, 파라미터가 1개면 소괄호 생략 가능
+    // 3. 코드 한줄이면 {}도 생략가능
+
+    // 단점
+    // this값을 활용할 때 바깥(상위)에 있던 this값을 내부에서 그대로 사용
+    // this값을 새로 재정의해주지않음
+    const 함수 = (a) => {
+      return a + 10
+    }
+    console.log(함수(2));
+
+    // arrow function 예시
+    // 1. forEach
+    [1,2,3,9].forEach((e) => {
+      console.log(e);
+    })
+
+    // 2. eventListener
+
+
+  </script>
+</body>
+</html>
