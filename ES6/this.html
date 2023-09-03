@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="button">button</button>
+  <script>
+    // 1
+    // 그냥쓰거나 함수안에서 this사용시 ⇒ window : 자바스크립트의 기본 함수들 수납 공간
+    console.log(this);
+
+    // 2
+    // 객체 내 함수(메소드)안에서 this를 사용시 그 함수를 가지고 있는 객체를 말함
+    const ojt = {
+      data: 'Lee',
+      func: function() {
+        console.log(this)
+      }
+    }
+    ojt.func()
+    // 2-2 차이점
+    const good = {
+      data: {
+        func: function(){
+          console.log(this);
+          // console.log(good);
+        }
+      }
+    }
+    good.data.func()
+    
+    // arrow function
+    const arrow = {
+      data: {
+        check: () => {
+          console.log(this);
+        }
+      }
+    }
+    arrow.data.check()
+
+    //3 생성자
+    
+    function constructor() {
+      this.name = 'lee' // 여기서 this는 새로 생성되는 오브젝트(인스턴스)라고 말한다.
+    }
+
+    const test = new constructor();
+    console.log(test);
+
+    //4 EventListener안에서는 e.currentTarget로 나타난다. 단, 파라미터  필수
+    document.getElementById('button').addEventListener('click', function(e){
+      console.log(this);
+      console.log(e.currentTarget); // 지금 이벤트가 동작하는 곳을 출력함
+      const array = [1, 2, 3];
+      array.forEach(function(a){
+        console.log(a);
+        console.log(this);
+      })
+    })
+
+    //5 오브젝트 내에서 콜백함수를 쓴다면? this는?
+    const gaboja = {
+      names: ['lee', 'Lim', 'ann'],
+      going: function() {
+        console.log('1st', this); // gaboja 객체를 값을 가져옴
+        gaboja.names.forEach(function(e){
+          console.log('2nd',this);
+        })
+      }
+    }
+    gaboja.going()
+  </script>
+</body>
+</html>
