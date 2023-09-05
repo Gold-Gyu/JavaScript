@@ -8,7 +8,25 @@
 <body>
   <script>
 
-    
+
+
+
+    // 호이스팅
+
+    console.log(age); // 아직 할당되지 않은 자료형 때매 undefined가 뜸
+    var age = '30';
+    console.log(age);
+
+    // 전역변수
+    const name = "lee"
+    function test() {
+      // 지역변수
+      const otherName = 'gold'
+      console.log(name);
+      console.log(otherName);
+    }
+    // console.log(otherName); // 지역변수는 그 함수 범위안에서만 사용 가능
+    test();
   </script>
 </body>
 </html>
