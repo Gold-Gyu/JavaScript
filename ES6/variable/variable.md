@@ -13,6 +13,11 @@
     - 만약 변경 불가능한 오브젝트를 만들고 싶다면?
       Object.freeze(오브젝트명) => 값을 절때 바꿀 수 없음
   - 범위: 중괄호{}
+
+### const와 let은 Hoisting시 undefined라는 값이 자동으로 할당되지 않음
+### var은 Hoisting시 undefined값이 자동 할당
+
+
 3. var
   - 재선언 가능: 변수명을 중복해서 사용 가능
   - 재할당 가능
@@ -37,3 +42,8 @@
 - 전역 변수
 
 # 지역변수 : 해당 범위 안에서만 사용할 수 있는 변수
+
+
+# 함수 Hoisting
+1. function 함수() {} : 함수 전체가 Hoisting
+2. var 함수 = function() {} : 선언 부분만 Hoisting 
