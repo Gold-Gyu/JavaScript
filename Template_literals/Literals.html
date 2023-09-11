@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <div>TEST</div>
+  <script>
+    // backquote문자열의 장점
+    // 1. 엔터키 장점
+    // 2. 중간중간 변수넣기 쉬움
+    const text = `아스날`;
+    const text2 = `안녕하세요 저는 ${ text }을 응원해요`;
+    console.log(text2); 
+
+    // 3. tagged literal
+    function func() {
+      return 10
+    }
+    // 콘솔값 10이 나옴
+    console.log(func`안녕하세요 저는 ${ text }을 응원해요`);
+    
+    // 문자를 해체분석할 수 있음
+    // 단어 순서를 변경, 단어 제거, 변수 위치 수정 등
+    function test(strings, variable) {
+      console.log(strings);
+      console.log(variable);
+    }
+    console.log(test`안녕하세요 저는 ${ text }을 응원해요`);
+  
+
+  </script>
+</body>
+</html>
